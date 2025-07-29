@@ -1,0 +1,325 @@
+:root {
+    --primary-color: #FFD700; /* Amarillo oro para acentos */
+    --background-dark: #1a1a1a; /* Oscuro casi negro para el fondo */
+    --background-medium: #2a2a2a; /* Tono medio para secciones */
+    --text-light: #f0f0f0; /* Blanco suave para el texto */
+    --text-dark: #333; /* Texto oscuro para contraste */
+    --error-color: #ff4c4c;
+    --border-radius-large: 15px;
+    --border-radius-medium: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_Canada_greyed.svg');
+    background-size: 50% auto;
+    background-position: center 20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    opacity: 0.8;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+header {
+    background-color: var(--background-medium);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.main-title-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+}
+
+/* Estilos comunes para ambas banderas (ambas <img>) */
+.flag-icon, .alberta-flag-icon {
+    display: block;
+    width: 16rem; /* Ancho de la bandera */
+    height: 8rem; /* Altura de la bandera (1:2 proporción) */
+    border: 2px solid var(--primary-color); /* Contorno amarillo */
+    box-sizing: border-box; /* Incluye el padding y borde en el width/height */
+    object-fit: fill; /* CLAVE: Rellena el contenedor estirando si es necesario */
+    object-position: center; /* Centra la imagen dentro del contenedor (aunque fill ya la estira) */
+    padding: 0; /* Asegurarse de que no haya padding interno en la imagen */
+}
+
+/* Elimina la regla .alberta-flag-icon anterior que usaba background-image */
+
+header p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* Media query para pantallas más pequeñas - ajuste de tamaño de banderas */
+@media (max-width: 768px) {
+    body {
+        background-size: 70% auto;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 0.75rem 0;
+    }
+
+    .main-title-group {
+        flex-direction: column; /* En móvil, apilamos los elementos */
+        padding: 0.5rem 0;
+    }
+
+    .flag-icon, .alberta-flag-icon {
+        width: 10rem;
+        height: 5rem;
+        margin: 0.5rem 0; /* Margen entre elementos apilados */
+    }
+
+    header h1 {
+        margin: 0.5rem 0;
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+    }
+
+    header p {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    .map-section {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        border-radius: 0;
+    }
+
+    .map-container iframe {
+        border-radius: 0;
+    }
+
+    .player-section {
+        padding: 1.5rem 0.5rem;
+        margin-bottom: 20px;
+    }
+
+    select {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    audio {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 90% auto;
+        background-position: center 10px;
+    }
+
+    header h1 {
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+    }
+
+    header p {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    .player-section h2 {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+/* Ajustes de margen para la disposición del contenido principal */
+main.container {
+    margin-top: 30px; /* Espacio desde el header */
+    margin-bottom: 30px; /* Espacio antes de la sección del mapa */
+    /* Se mantienen las propiedades existentes: */
+    max-width: 1000px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.map-section {
+    background-color: var(--background-medium);
+    padding: 0;
+    margin-top: 0; /* El margen ya viene del main.container de arriba */
+    margin-bottom: 30px; /* Margen inferior entre el mapa y el footer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    padding-bottom: 28.125%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-large);
+    transform: translateZ(0);
+    margin: 0 auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: var(--border-radius-large);
+}
+
+.player-section {
+    background-color: var(--background-medium);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 0; /* Eliminar margen superior interno, el main.container lo controla */
+    margin-bottom: 0; /* Eliminar margen inferior interno, el main.container lo controla */
+}
+
+.player-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+select {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--primary-color);
+    background-color: #333;
+    color: var(--text-light);
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFD700%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-24.6%200L146.2%20186.1%2032%2069.4a17.6%2017.6%200%200%200-24.6%2024.9l116.5%20116.9a17.6%2017.6%200%200%200%2024.6%200l116.5-116.9a17.6%2017.6%200%200%200%200-24.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.8em;
+    cursor: pointer;
+    width: 80%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #fdd835;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+audio {
+    width: 90%;
+    max-width: 600px;
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 1rem auto;
+    background-color: #444;
+    display: block;
+}
+
+iframe {
+    margin: 1rem auto;
+    display: block;
+}
+
+.error {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+footer {
+    background-color: var(--background-medium);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--text-light); /* Color del texto general del footer a blanco */
+    margin-top: auto;
+    border-top: 2px solid var(--primary-color);
+    font-size: 1rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--primary-color); /* El enlace sigue siendo amarillo */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    color: #fdd835;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
