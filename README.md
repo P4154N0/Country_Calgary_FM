@@ -1,33 +1,76 @@
-# Country Calgary FM
+# 🤠 Country Calgary FM: ¡Tu Música Vaquera en un Clic! 🎶
 
-Welcome to Country Calgary FM! This is a simple web application designed for you to listen to the best country music stations from Calgary, Alberta, Canada, directly from your browser.
+¡Bienvenido a **Country Calgary FM**! Esta es tu aplicación web sencilla y directa para sintonizar las mejores estaciones de música country de **Calgary, Alberta, Canadá**, directamente desde tu navegador. ¡Prepárate para el ritmo vaquero!
 
-## 📻 How It Works
+---
 
-This application is built with pure HTML, CSS, and JavaScript. It does not require complex installation.
+## 🚀 Ver en Vivo
 
-1.  **Open the Application:** Simply open the `fm_calgari.html` file in your preferred web browser.
+¡Puedes ver y escuchar Country Calgary FM en acción directamente aquí!
+**[Ir a Country Calgary FM](https://p4154n0.github.io/Country_Calgary_FM/)**
 
-2.  **Select a Station:** Use the dropdown menu to choose the radio station you wish to listen to.
+---
 
-3.  **Enjoy!**
+## 🎯 ¿Qué es Country Calgary FM?
 
-## 🎧 Important Notes on Playback:
+Este proyecto es un **reproductor de radio web** diseñado para brindarte una experiencia fluida al escuchar tus emisoras country favoritas. Olvídate de instalaciones complejas; simplemente abre la aplicación y elige tu estación. La aplicación maneja de forma inteligente tanto **streams de audio directos** como **reproductores web incrustados (iframes)** para asegurar la mejor compatibilidad posible.
 
-* **Stream Loading (Patience, please):** When selecting a station, please **wait a few seconds** for the audio stream or embedded player to load. Loading speed may depend on your internet connection and the station's server.
+---
 
-* **Stations with Internal Players (e.g., WILD 95.3, Virgin Radio, Moose FM):** Some stations use their own web players (which load within the application). For these stations, you might need to **manually click the "Play" button that appears inside the player** once it has loaded. This is normal browser behavior to prevent autoplay without user interaction.
+## ✨ Características Destacadas
 
-* **Direct Stream Stations:** Other stations will play directly using the browser's native audio controls. If autoplay does not start, simply click the "Play" button on the controls that appear.
+* **Sintonización Fácil:** Interfaz intuitiva con un menú desplegable para seleccionar tu emisora preferida.
+* **Compatibilidad Amplia:** Soporta la reproducción de streams de audio directos (como MP3, AAC) y la integración de reproductores de radio basados en `iframe`.
+* **Experiencia sin Complicaciones:** Desarrollado con HTML, CSS y JavaScript puro, sin dependencias complejas.
+* **Mapa Interactivo (¡Próximamente!):** Visualiza la ubicación de Calgary en un mapa interactivo (en desarrollo).
+* **Galería de Calgary (¡Próximamente!):** Explora imágenes de Calgary con una galería interactiva (en desarrollo).
 
-## 🗺️ Interactive Map
+---
+## 📻 Cómo Empezar (¡Es Fácil!)
 
-Explore the location of Calgary, Alberta, Canada, directly on the page with the interactive Google Maps.
+1.  **Clona el Repositorio:**
+    ```bash
+    git clone [https://github.com/tu-usuario/Country_Calgary_FM.git](https://github.com/tu-usuario/Country_Calgary_FM.git)
+    ```
+2.  **Navega al Directorio del Proyecto:**
+    ```bash
+    cd Country_Calgary_FM
+    ```
+3.  **Abre el Archivo:** Simplemente haz doble clic en el archivo `fm_calgari.html` en tu navegador web de preferencia.
+4.  **Selecciona tu Estación:** Utiliza el menú desplegable para elegir la estación de radio que quieres escuchar.
+5.  **¡A Disfrutar!** Sintoniza la mejor música country.
 
-## 🚧 Under Development
+---
 
-The map section and the implementation of an interactive Calgary gallery are currently under development. More functionalities coming soon!
+## 🎧 Notas Importantes sobre la Reproducción
 
-## 💻 Developed by
+Para asegurar la mejor experiencia, ten en cuenta lo siguiente:
 
-This project has been developed with ❤️ by [P4154N0](https://www.linkedin.com/in/hector-pablo-graff/).
+* **Carga del Stream (¡Un poco de paciencia, por favor!):** Al seleccionar una estación, espera unos **pocos segundos** a que el stream de audio o el reproductor incrustado se cargue por completo. La velocidad de carga puede variar según tu conexión a internet y el servidor de la emisora.
+
+* **Estaciones con Reproductores Internos (ej. WILD 95.3, Virgin Radio, Moose FM):** Algunas emisoras utilizan sus propios reproductores web (que se cargarán dentro de la aplicación como un `iframe`). Para estas estaciones, es posible que necesites **hacer clic manualmente en el botón "Play" que aparece dentro del reproductor** una vez que se haya cargado. Este es un comportamiento normal de los navegadores para prevenir la reproducción automática sin interacción del usuario.
+
+* **Estaciones de Stream Directo:** Otras emisoras se reproducirán directamente utilizando los controles de audio nativos del navegador. Si la reproducción automática no inicia, simplemente haz clic en el botón "Play" de los controles que aparecerán.
+
+---
+
+## 🚧 En Desarrollo
+
+¡Este proyecto está en constante evolución! Las siguientes secciones y funcionalidades están actualmente en desarrollo y se añadirán pronto:
+
+* **Mapa Interactivo:** Integración completa de Google Maps para explorar la ubicación de Calgary.
+* **Galería Interactiva:** Una sección dedicada con imágenes de Calgary para que puedas conocer más la ciudad.
+
+¡Mantente atento a las actualizaciones!
+
+---
+
+## 👨‍💻 Desarrollado por
+
+Este proyecto ha sido desarrollado con ❤️ por **[P4154N0](https://www.linkedin.com/in/hector-pablo-graff/)**.
+
+---
+
+### **Etiquetas Sugeridas para tu Repositorio de GitHub:**
+
+`html`, `css`, `javascript`, `web-app`, `radio`, `country-music`, `calgary`, `alberta`, `canada`, `streaming`, `audio-player`, `frontend`, `learning-project`
