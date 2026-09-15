@@ -1,76 +1,90 @@
-# 🤠 Country Calgary FM: ¡Tu Música Vaquera en un Clic! 🎶
+# Country Calgary FM - Web Audio Streaming Interface
 
-¡Bienvenido a **Country Calgary FM**! Esta es tu aplicación web sencilla y directa para sintonizar las mejores estaciones de música country de **Calgary, Alberta, Canadá**, directamente desde tu navegador. ¡Prepárate para el ritmo vaquero!
+🇪🇸 [Español](README_es.md)
 
----
-
-## 🚀 Ver en Vivo
-
-¡Puedes ver y escuchar Country Calgary FM en acción directamente aquí!
-**[Ir a Country Calgary FM](https://p4154n0.github.io/Country_Calgary_FM/)**
+A lightweight, dependency-free web application designed for ingesting and playing live music radio streams from Calgary, Alberta, Canada.
 
 ---
 
-## 🎯 ¿Qué es Country Calgary FM?
+## 🚀 Production Environment (Live Demo)
 
-Este proyecto es un **reproductor de radio web** diseñado para brindarte una experiencia fluida al escuchar tus emisoras country favoritas. Olvídate de instalaciones complejas; simplemente abre la aplicación y elige tu estación. La aplicación maneja de forma inteligente tanto **streams de audio directos** como **reproductores web incrustados (iframes)** para asegurar la mejor compatibilidad posible.
+The application is deployed and fully operational through continuous integration on GitHub Pages:
 
----
-
-## ✨ Características Destacadas
-
-* **Sintonización Fácil:** Interfaz intuitiva con un menú desplegable para seleccionar tu emisora preferida.
-* **Compatibilidad Amplia:** Soporta la reproducción de streams de audio directos (como MP3, AAC) y la integración de reproductores de radio basados en `iframe`.
-* **Experiencia sin Complicaciones:** Desarrollado con HTML, CSS y JavaScript puro, sin dependencias complejas.
-* **Mapa Interactivo (¡Próximamente!):** Visualiza la ubicación de Calgary en un mapa interactivo (en desarrollo).
-* **Galería de Calgary (¡Próximamente!):** Explora imágenes de Calgary con una galería interactiva (en desarrollo).
-
----
-## 📻 Cómo Empezar (¡Es Fácil!)
-
-1.  **Clona el Repositorio:**
-    ```bash
-    git clone [https://github.com/tu-usuario/Country_Calgary_FM.git](https://github.com/tu-usuario/Country_Calgary_FM.git)
-    ```
-2.  **Navega al Directorio del Proyecto:**
-    ```bash
-    cd Country_Calgary_FM
-    ```
-3.  **Abre el Archivo:** Simplemente haz doble clic en el archivo `fm_calgari.html` en tu navegador web de preferencia.
-4.  **Selecciona tu Estación:** Utiliza el menú desplegable para elegir la estación de radio que quieres escuchar.
-5.  **¡A Disfrutar!** Sintoniza la mejor música country.
+**[Tune in to Country Calgary FM](https://p4154n0.github.io/Country_Calgary_FM/)**
 
 ---
 
-## 🎧 Notas Importantes sobre la Reproducción
+## 🎯 Executive Summary
 
-Para asegurar la mejor experiencia, ten en cuenta lo siguiente:
+This project is a technical demonstration of native Frontend development.
 
-* **Carga del Stream (¡Un poco de paciencia, por favor!):** Al seleccionar una estación, espera unos **pocos segundos** a que el stream de audio o el reproductor incrustado se cargue por completo. La velocidad de carga puede variar según tu conexión a internet y el servidor de la emisora.
+Its primary objective is to handle different audio streaming protocols — direct audio streams and embedded iframes — by unifying them under a single smooth and resilient user interface.
 
-* **Estaciones con Reproductores Internos (ej. WILD 95.3, Virgin Radio, Moose FM):** Algunas emisoras utilizan sus propios reproductores web (que se cargarán dentro de la aplicación como un `iframe`). Para estas estaciones, es posible que necesites **hacer clic manualmente en el botón "Play" que aparece dentro del reproductor** una vez que se haya cargado. Este es un comportamiento normal de los navegadores para prevenir la reproducción automática sin interacción del usuario.
-
-* **Estaciones de Stream Directo:** Otras emisoras se reproducirán directamente utilizando los controles de audio nativos del navegador. Si la reproducción automática no inicia, simplemente haz clic en el botón "Play" de los controles que aparecerán.
+The application completely avoids external frameworks such as React or Angular, as well as styling libraries such as Bootstrap, demonstrating solid knowledge of the DOM and modern CSS3.
 
 ---
 
-## 🚧 En Desarrollo
+## 🏗️ Architecture and UI/UX Decisions
 
-¡Este proyecto está en constante evolución! Las siguientes secciones y funcionalidades están actualmente en desarrollo y se añadirán pronto:
+The interface was designed following premium user experience principles, implementing the following technical features:
 
-* **Mapa Interactivo:** Integración completa de Google Maps para explorar la ubicación de Calgary.
-* **Galería Interactiva:** Una sección dedicada con imágenes de Calgary para que puedas conocer más la ciudad.
+* **Glassmorphism Design System:** Implementation of translucent cards with visual depth using advanced CSS properties such as `backdrop-filter: blur`, `rgba` opacity management, and complex shadows.
 
-¡Mantente atento a las actualizaciones!
+* **Native Animations (Zero Dependencies):** Creation of a dynamic audio equalizer using CSS keyframe animations (`@keyframes`) and asynchronous animation delays (`animation-delay`). This eliminates the need for external `.gif` files and contributes to a lighter implementation.
 
----
+* **Hybrid Media Handler:** A pure JavaScript (`Vanilla JS`) algorithm capable of detecting the origin of the selected URL and dynamically switching between the browser's native `<audio>` API and secure `<iframe>` injection, while handling potential network and CORS-related issues.
 
-## 👨‍💻 Desarrollado por
-
-Este proyecto ha sido desarrollado con ❤️ por **[P4154N0](https://www.linkedin.com/in/hector-pablo-graff/)**.
+* **Responsive Design (Mobile-First):** A responsive structure managed through global CSS variables (`:root`) and media queries (`@media`), following the principles of the CSS cascade.
 
 ---
 
-### **Etiquetas Sugeridas para tu Repositorio de GitHub:**
+## ⚙️ Local Deployment Instructions
 
-`html`, `css`, `javascript`, `web-app`, `radio`, `country-music`, `calgary`, `alberta`, `canada`, `streaming`, `audio-player`, `frontend`, `learning-project`
+To audit or run the source code in a local development environment:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/P4154N0/Country_Calgary_FM.git
+```
+
+### 2. Access the Project Directory
+
+```bash
+cd Country_Calgary_FM
+```
+
+### 3. Initialization
+
+As this is a static project based on **Vanilla HTML/CSS/JS**, no build process is required.
+
+It is recommended to run the `index.html` file through an extension such as **Live Server** in VS Code. This emulates a web server environment and helps avoid browser security restrictions, including CORS-related issues when loading audio streams.
+
+---
+
+## 🚧 Roadmap and Future Implementations
+
+- Full integration of the Google Maps API for interactive geospatial visualization of Calgary.
+- Refactoring of global error handling for streaming ingestion.
+
+---
+
+## 📜 License and Disclaimer
+
+The graphical interface source code and stream-routing logic are released under the **MIT License** — see the `LICENSE` file for details.
+
+### Copyright Notice
+
+All audio streams, trademarks, station names, and logos referenced by this application are the intellectual property of their respective broadcasting organizations.
+
+This application acts solely as an aggregation client pointing to publicly available streaming URLs. It does not host or retransmit multimedia content on its own servers.
+
+---
+
+## 👤 Author
+
+Designed and developed by **P4154N0 (Héctor Pablo Graff)**.
+
+Software Engineer specialized in Distributed Systems and Telemetry Architectures. Currently based in Argentina, with the professional goal of contributing technological value to the energy and industrial sectors in Calgary, AB, Canada.
+
+🔗 **[LinkedIn](https://www.linkedin.com/in/hector-pablo-graff/)** | 💻 **[Portfolio](https://p4154n0.github.io/portfolio/)**
