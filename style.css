@@ -1,0 +1,453 @@
+/* =========================================
+   VARIABLES PREMIUM - PALETA OSCURA
+   ========================================= */
+:root {
+    --gold-accent: #D4AF37;
+    /* Oro metálico fino */
+    --gold-hover: #F3E5AB;
+    /* Brillo al interactuar */
+    --glass-bg: rgba(20, 22, 25, 0.65);
+    /* Fondo oscuro translúcido */
+    --glass-border: rgba(255, 255, 255, 0.08);
+    /* Borde de cristal suave */
+    --text-primary: #F8F9FA;
+    --text-secondary: #ADB5BD;
+    --bg-deep: #0D0E12;
+    /* Fondo base ultra oscuro */
+    --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --copper: #B87333;
+}
+
+/* =========================================
+   RESET Y BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fondo inmersivo con la bandera de Canadá difuminada */
+.ambient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        url('https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_Canada_greyed.svg');
+    background-size: 80% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+    /* Evita que interfiera con los clics */
+}
+
+/* =========================================
+   SISTEMA GLASSMORPHISM (Tarjetas)
+   ========================================= */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-premium);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* =========================================
+   CABECERA (HEADER)
+   ========================================= */
+.main-header {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--gold-accent);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.flag-icon {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
+}
+
+.subtitle {
+    color: var(--gold-accent);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   ECUALIZADOR CSS (Ondas de Radio Nativas)
+   ========================================= */
+.css-equalizer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.css-equalizer .bar {
+    display: block;
+    width: 4px;
+    background-color: var(--gold-accent);
+    border-radius: 2px;
+    /* Ejecuta la animación en un bucle infinito */
+    animation: equalize 1s infinite ease-in-out;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+/* Desfasamos los tiempos para simular una onda orgánica */
+.css-equalizer .bar-1 {
+    animation-delay: -0.2s;
+}
+
+.css-equalizer .bar-2 {
+    animation-delay: -0.6s;
+}
+
+.css-equalizer .bar-3 {
+    animation-delay: -0.1s;
+}
+
+.css-equalizer .bar-4 {
+    animation-delay: -0.8s;
+}
+
+.css-equalizer .bar-5 {
+    animation-delay: -0.4s;
+}
+
+/* El motor matemático de la animación */
+@keyframes equalize {
+    0%,
+    100% {
+        height: 6px;
+    }
+
+    50% {
+        height: 28px;
+    }
+}
+
+/* =========================================
+   SECCIÓN DEL REPRODUCTOR
+   ========================================= */
+.player-section {
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.live-icon {
+    color: #ff4c4c;
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.player-section h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+/* Selector Customizado de Alta Gama */
+.select-container label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+}
+
+.premium-select {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--gold-accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    appearance: none;
+    /* Elimina la flecha nativa */
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.premium-select:focus,
+.premium-select:hover {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.premium-select option {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    padding: 10px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold-accent);
+    pointer-events: none;
+    /* Para que el clic pase al select */
+}
+
+/* Contenedor multimedia */
+.media-container audio {
+    display: block;
+    /* Obliga al elemento a comportarse como un bloque independiente */
+    margin: 10px auto;
+    /* El 'auto' a izquierda y derecha centra el elemento matemáticamente */
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+}
+
+.media-container iframe {
+    border-radius: 12px;
+}
+
+.error-msg {
+    color: #ff4c4c;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    background: rgba(255, 76, 76, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 76, 76, 0.3);
+}
+
+/* =========================================
+   MAPA INMERSIVO
+   ========================================= */
+.map-section {
+    border-radius: 20px;
+    overflow: hidden;
+    /* Mantiene el iframe dentro de los bordes redondeados */
+    padding: 8px;
+    /* Crea un marco de cristal alrededor del mapa */
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 45%;
+    /* Relación de aspecto más panorámica */
+    height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(120%);
+    /* Filtro Dark Mode para el mapa */
+}
+
+/* =========================================
+   FOOTER PREMIUM
+   ========================================= */
+.footer-premium {
+    width: 100%;
+    margin-top: auto;
+    padding: 2.5rem 1rem;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.footer-credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.author-link {
+    color: var(--copper);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.author-link:hover {
+    color: var(--gold-accent);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.telemetry {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.telemetry i {
+    color: var(--gold-accent);
+    opacity: 0.7;
+    margin: 0 4px;
+}
+
+.footer-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.footer-tag:hover {
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsivo)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-header h1 {
+        font-size: 2rem;
+    }
+
+    .map-container {
+        padding-bottom: 75%;
+    }
+
+    .player-section {
+        padding: 2rem 1rem;
+    }
+
+    .premium-select {
+        font-size: 1rem;
+    }
+}
