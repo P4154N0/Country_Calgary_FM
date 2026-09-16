@@ -1,119 +1,120 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
-    <head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Country Calgary FM - Radio Country premium en vivo desde Alberta, Canadá." />
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Country Calgary FM - Radio Country premium en vivo desde Alberta, Canadá." />
+    <title>Country Calgary FM | Premium Experience</title>
 
-        <title>Country Calgary FM | Premium Experience</title>
+    <!-- Tipografía Profesional: Montserrat para un look geométrico y moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-        <!-- Tipografía Profesional: Montserrat para un look geométrico y moderno -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="style.css">
+<body>
 
-    </head>
+    <div class="ambient-background"></div>
 
+    <header class="glass-panel main-header">
+        <!-- Botón Toggle de Idioma -->
+        <div class="lang-toggle-container">
+            <button id="langToggleBtn" class="lang-btn" aria-label="Cambiar idioma / Change language">
+                <i class="fa-solid fa-globe"></i> <span id="langText">EN</span>
+            </button>
+        </div>
 
-
-    <body>
-
-        <div class="ambient-background"></div>
-
-        <header class="glass-panel main-header">
-            <div class="header-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canadá"
-                    class="flag-icon" width="80" height="40">
-                <div class="title-group">
-                    <h1>Country Calgary FM</h1>
-                    <!-- Ecualizador CSS Nativo (Cero dependencias externas) -->
-                    <div class="css-equalizer">
-                        <span class="bar bar-1"></span>
-                        <span class="bar bar-2"></span>
-                        <span class="bar bar-3"></span>
-                        <span class="bar bar-4"></span>
-                        <span class="bar bar-5"></span>
-                    </div>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canadá"
+                class="flag-icon" width="110" height="55">
+            <div class="title-group">
+                <h1>Country Calgary FM</h1>
+                <!-- Ecualizador CSS Nativo (Cero dependencias externas) -->
+                <div class="css-equalizer">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                    <span class="bar bar-4"></span>
+                    <span class="bar bar-5"></span>
                 </div>
-                <img src="img/alberta-flag.svg" alt="Alberta" class="flag-icon" width="80" height="40">
             </div>
-            <p class="subtitle">The Elite Country Radio Experience in Alberta, Canada.</p>
-        </header>
+            <img src="img/alberta-flag.svg" alt="Alberta" class="flag-icon" width="110" height="60">
+        </div>
+        <p class="subtitle" data-i18n="subtitle">The Elite Country Radio Experience in Alberta, Canada.</p>
+    </header>
 
-        <main class="container">
-            <section class="glass-panel player-section">
-                <div class="player-header">
-                    <i class="fa-solid fa-tower-broadcast live-icon"></i>
-                    <h2>Live Broadcasting</h2>
+    <main class="container">
+        <section class="glass-panel player-section">
+            <div class="player-header">
+                <i class="fa-solid fa-tower-broadcast live-icon"></i>
+                <h2 data-i18n="liveBroadcasting">Live Broadcasting</h2>
+            </div>
+
+            <div class="select-container">
+                <label for="stationSelect" data-i18n="selectStationLabel">Selecciona tu emisora favorita</label>
+                <div class="custom-select-wrapper">
+                    <select id="stationSelect" name="stationSelect" class="premium-select">
+                        <option value="https://www.wild953.com/player/?playerID=475">🎙️ WILD 95.3</option>
+                        <option value="https://corus.leanstream.co/CKRYFM">🎵 Country 105 (CKRY-FM)</option>
+                        <option value="https://newcap.leanstream.co/CIBQFM">📻 Real Country Q 105.7</option>
+                        <option value="https://www.iheart.com/live/985-virgin-radio-7492/">🌾 Virgin Radio Calgary
+                        </option>
+                        <option value="https://ice1.somafm.com/groovesalad-128-mp3">🐻 CJAY 92</option>
+                        <option value="https://corus.leanstream.co/CISNFM">🦌 CISN Country 103.9</option>
+                        <option value="https://moosemediafsj.ca/livestream/">🐮 Moose FM 100.1</option>
+                        <option value="https://cjwe.streamon.fm/CJWE-24k-128.mp3">🤠 CJWE 88.1 FM</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-arrow"></i>
                 </div>
+            </div>
 
-                <div class="select-container">
-                    <label for="stationSelect">Selecciona tu emisora favorita</label>
-                    <div class="custom-select-wrapper">
-                        <select id="stationSelect" name="stationSelect" class="premium-select">
-                            <option value="https://www.wild953.com/player/?playerID=475">🎙️ WILD 95.3</option>
-                            <option value="https://corus.leanstream.co/CKRYFM">🎵 Country 105 (CKRY-FM)</option>
-                            <option value="https://newcap.leanstream.co/CIBQFM">📻 Real Country Q 105.7</option>
-                            <option value="https://www.iheart.com/live/985-virgin-radio-7492/">🌾 Virgin Radio Calgary
-                            </option>
-                            <option value="https://ice1.somafm.com/groovesalad-128-mp3">🐻 CJAY 92</option>
-                            <option value="https://corus.leanstream.co/CISNFM">🦌 CISN Country 103.9</option>
-                            <option value="https://moosemediafsj.ca/livestream/">🐮 Moose FM 100.1</option>
-                            <option value="https://cjwe.streamon.fm/CJWE-24k-128.mp3">🤠 CJWE 88.1 FM</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down select-arrow"></i>
-                    </div>
-                </div>
+            <div class="media-container">
+                <iframe id="radioPlayerIframe" width="100%" height="90" src="" frameborder="0" allow="autoplay"
+                    style="display:none;" title="Reproductor Web"></iframe>
+                <audio id="radioPlayerAudio" controls autoplay style="display:none;" aria-label="Audio en vivo"></audio>
+                <div id="errorMsg" class="error-msg" style="display:none;"></div>
+            </div>
+        </section>
 
-                <div class="media-container">
-                    <iframe id="radioPlayerIframe" width="100%" height="90" src="" frameborder="0" allow="autoplay"
-                        style="display:none;" title="Reproductor Web"></iframe>
-                    <audio id="radioPlayerAudio" controls autoplay style="display:none;" aria-label="Audio en vivo"></audio>
-                    <div id="errorMsg" class="error-msg" style="display:none;"></div>
-                </div>
-            </section>
+        <section class="glass-panel map-section">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d185885.6416790901!2d-114.2818967520019!3d51.02677161877477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d337ee37b99c6!2sCalgary%2C%20AB%2C%20Canad%C3%A1!5e0!3m2!1ses-419!2sar!4v1716940000000!5m2!1ses-419!2sar"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""
+                    title="Ubicación satelital Calgary"></iframe>
+            </div>
+        </section>
+    </main>
 
-            <section class="glass-panel map-section">
-                <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d185885.6416790901!2d-114.2818967520019!3d51.02677161877477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d337ee37b99c6!2sCalgary%2C%20AB%2C%20Canad%C3%A1!5e0!3m2!1ses-419!2sar!4v1716940000000!5m2!1ses-419!2sar"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""
-                        title="Ubicación satelital Calgary"></iframe>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer Corporativo y Exclusivo -->
-        <footer class="glass-panel footer-premium">
-            <div class="footer-credits">
-                <span class="copyright">
-                    ©2026 Designed & Engineered by
-                    <a href="https://www.linkedin.com/in/hector-pablo-graff/" target="_blank" rel="noopener noreferrer"
-                        class="author-link">
-                        HÉCTOR PABLO GRAFF
-                    </a>
-                </span>
-                <span class="telemetry">
-                    <i class="fa-solid fa-server"></i> LOC: Argentina // <i class="fa-solid fa-bolt"></i> TARGET: Calgary,
-                    AB (Energy Sector)
-                </span>
-
-                <a href="https://p4154n0.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="footer-tag">
-                    <i class="fa-solid fa-layer-group"></i> Console / Portfolio
+    <!-- Footer Corporativo y Exclusivo -->
+    <footer class="glass-panel footer-premium">
+        <div class="footer-credits">
+            <span class="copyright">
+                ©2026 Designed & Engineered by
+                <a href="https://www.linkedin.com/in/hector-pablo-graff/" target="_blank" rel="noopener noreferrer"
+                    class="author-link">
+                    HÉCTOR PABLO GRAFF
                 </a>
-            </div>
-        </footer>
+            </span>
+            <span class="telemetry">
+                <i class="fa-solid fa-server"></i> LOC: Argentina // <i class="fa-solid fa-bolt"></i> <span
+                    data-i18n="telemetryTarget">TARGET: Calgary, AB (Energy Sector)</span>
+            </span>
 
-        <script src="app.js"></script>
+            <a href="https://p4154n0.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="footer-tag">
+                <i class="fa-solid fa-layer-group"></i> <span data-i18n="footerConsole">Console / Portfolio</span>
+            </a>
+        </div>
+    </footer>
 
-    </body>
+    <script src="app.js"></script>
+</body>
 
 </html>
